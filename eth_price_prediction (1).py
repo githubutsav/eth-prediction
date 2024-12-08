@@ -108,14 +108,14 @@ plt.show()
 
 from datetime import timedelta
 
-# Plot actual prices
+
 plt.figure(figsize=(12, 6))
 plt.plot(prices.index,prices['Close'],label='Actual Prices', color='blue', linewidth=2)
 
-# Plot predicted prices
+
 plt.plot(future_dates, predicted_prices,label='Predicted Prices (Next 30 Days)', color='red', linestyle='--', linewidth=2)
 
-# Customize the plot
+
 plt.title('Ethereum Price Prediction for the Next 30 Days', fontsize=14)
 plt.xlabel('Date', fontsize=12)
 plt.ylabel('Price (USD)', fontsize=12)
@@ -125,16 +125,16 @@ end_date = pd.Timestamp('2026-01-30')
 plt.xlim(start_date, end_date)
 
 
-# Format the x-axis
+
 plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d'))
 plt.gca().xaxis.set_major_locator(mdates.WeekdayLocator(interval=2))
 plt.xticks(rotation=45)
 
-# Add legend and grid
+
 plt.legend()
 plt.grid(True)
 
-# Show the plot
+
 plt.tight_layout()
 plt.show()
 
