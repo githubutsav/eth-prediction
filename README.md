@@ -17,7 +17,7 @@ In this project, we use yfinance to gather historical price data for Ethereum an
 
 This project demonstrates how machine learning can be applied to cryptocurrency price forecasting, offering valuable insights for investors and enthusiasts looking to make data-driven decisions in the cryptocurrency market.
 
-#Key features
+## Key features
 <ul>
   <li>Data Collection: Fetches historical Ethereum price data using yfinance.</li>
   <li>Data Preprocessing: Scales and reshapes the data to fit the LSTM input format.</li>
@@ -25,3 +25,11 @@ This project demonstrates how machine learning can be applied to cryptocurrency 
   <li>Price Prediction: Predicts Ethereum's price for the next 30 days.</li>
   <li>Visualization: Displays actual vs predicted price data using graphs to visualize trends.</li>
 </ul>
+
+## Features
+
+- Fetches historical Ethereum data from Yahoo Finance.
+- Preprocesses data using `MinMaxScaler`.
+- Utilizes LSTM, a specialized recurrent neural network for time series forecasting.
+- Predicts Ethereum prices for the next 30 days.
+- Visualizes actual vs. predicted prices for better analysis.
