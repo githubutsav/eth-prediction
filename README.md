@@ -8,7 +8,7 @@ A machine learning project to predict Ethereum (ETH-USD) prices using Long Short
 
 - [Project Overview](#Project-Overview)
 - [Key features](#Key-features)
-- [Usage](#usage)
+- [Setup and Installation](#Setup-and-Installation)
 - [Project Structure](#project-structure)
 - [Contributing](#contributing)
 
@@ -24,5 +24,9 @@ This project demonstrates how machine learning can be applied to cryptocurrency 
 - Model Training: Uses LSTM networks to train on historical Ethereum price data.
 - Price Prediction: Predicts Ethereum's price for the next 30 days.
 - Visualization: Displays actual vs predicted price data using graphs to visualize trends.
+
+## Setup and Installation
+
+To run this project locally, please follow the steps below:
 
 
