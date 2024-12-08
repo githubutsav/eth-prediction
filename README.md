@@ -39,7 +39,7 @@ pip install yfinance pandas numpy matplotlib scikit-learn tensorflow
 ## Project Structure
 
 The project has the following structure:
-notebook for training and predictions │ ├── crypto_price_prediction.py # Python script to train and predict cryptocurrency prices ├── requirements.txt # Required libraries and dependencies └── README.md # This file
+notebook for training and predictions │ ├── eth_price_prediction .py # Python script to train and predict cryptocurrency prices ├── requirements.txt # Required libraries and dependencies └── README.md # This file
 
 ## Code Explanation
 
