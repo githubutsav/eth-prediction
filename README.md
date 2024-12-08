@@ -30,10 +30,11 @@ This project demonstrates how machine learning can be applied to cryptocurrency 
 To run this project locally, please follow the steps below:
 1. Clone the repository or save the code as app.py.
 2. Install the required packages by running:
-3. ```bash
-   pip install yfinance pandas numpy matplotlib scikit-learn tensorflow
+```bash
+pip install yfinance pandas numpy matplotlib scikit-learn tensorflow
 
-  
+## 
+
 
 
 
