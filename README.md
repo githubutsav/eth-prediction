@@ -149,10 +149,73 @@ history = model.fit(X, y, batch_size=32, epochs=10, validation_split=0.1)
 print("Model trained successfully!")
 ```
 provided plots the training and validation loss over epochs to visualize how the model's performance evolves during training. This is useful for understanding whether the model is overfitting or underfitting
+```
+plt.figure(figsize=(8, 6))
+plt.plot(history.history['loss'], label='Training Loss')
+plt.plot(history.history['val_loss'], label='Validation Loss')
+plt.title('Model Loss During Training')
+plt.xlabel('Epochs')
+plt.ylabel('Loss')
+plt.legend()
+plt.show()
+```
 
 ![Alt text](download-2.png)
 
+```
+train_predictions = model.predict(X)
+train_predictions = scaler.inverse_transform(train_predictions.reshape(-1, 1))
+y_actual = scaler.inverse_transform(y.reshape(-1, 1))
+recent_data = data[-window_size:].reshape(1, window_size, 1)
+```
+# evaluate the performance of a regression model
+```
+mse = mean_squared_error(y_actual, train_predictions)
+print(f"Mean Squared Error on Training Data: {mse}")
+```
+```
+recent_data = data[-window_size:].reshape(1, window_size, 1)
+predicted_price = model.predict(recent_data)
+predicted_price = scaler.inverse_transform(predicted_price)
+print(f"Predicted Ethereum Price for the next day: {predicted_price[0][0]}")
+```
+provided generates a plot that compares the actual prices and predicted prices for Ethereum on the training data. This is useful for visually assessing how well the model has learned and made predictions
+```
+plt.figure(figsize=(12, 6))
+plt.plot(y_actual, label='Actual Prices', color='blue')
+plt.plot(train_predictions, label='Predicted Prices', color='red')
+plt.title('Ethereum Price Prediction on Training Data')
+plt.xlabel('Days')
+plt.ylabel('Price')
+plt.grid(True)
+plt.legend()
+plt.show()
+```
 
+![Alt text](download-1.png)
+
+# predicted prices for the next 30 days
+
+
+```
+plt.figure(figsize=(12, 6))
+plt.plot(prices.index,prices['Close'],label='Actual Prices', color='blue', linewidth=2)
+plt.plot(future_dates, predicted_prices,label='Predicted Prices (Next 30 Days)', color='red', linestyle='--', linewidth=2)
+plt.title('Ethereum Price Prediction for the Next 30 Days', fontsize=14)
+plt.xlabel('Date', fontsize=12)
+plt.ylabel('Price (USD)', fontsize=12)
+start_date = pd.Timestamp('2025-12-09')
+end_date = pd.Timestamp('2026-01-30')
+plt.xlim(start_date, end_date)
+plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d'))
+plt.gca().xaxis.set_major_locator(mdates.WeekdayLocator(interval=2))
+plt.xticks(rotation=45)
+plt.legend()
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+```
+![Alt text](download.png)
 
 
 
