@@ -33,6 +33,13 @@ To run this project locally, please follow the steps below:
    '''bash
    pip install yfinance pandas numpy matplotlib scikit-learn tensorflow
 
+   ### Install Dependencies
+To install the necessary libraries, run the following command:
+
+```bash
+pip install -r requirements.txt
+
+
 
 
 
