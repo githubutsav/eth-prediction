@@ -2,17 +2,17 @@
 
 Author: Utsav Singh
 Description:
-This project leverages machine learning, specifically Long Short-Term Memory (LSTM) networks, to predict the future prices of Ethereum (ETH). By analyzing historical price data, the model identifies patterns and trends to make accurate predictions for the next 30 days. The project uses time series forecasting techniques to model the price movements and visualize the predicted values.
+A machine learning project to predict Ethereum (ETH-USD) prices using Long Short-Term Memory (LSTM) neural networks. This project fetches historical Ethereum price data using `yfinance`, processes it for training, and predicts future prices while visualizing the results.
 
 ## Table of Contents
 
-- [Project Overview](#ProjectOverview)
-- [Key features](#Keyfeatures)
+- [Project Overview](#Project-Overview)
+- [Key features](#Key-features)
 - [Usage](#usage)
 - [Project Structure](#project-structure)
 - [Contributing](#contributing)
 
-# Project Overview
+## Project Overview
 In this project, we use yfinance to gather historical price data for Ethereum and preprocess it for training the LSTM model. The model is then trained on this data and used to predict the next 30 days of Ethereum prices. The predicted prices are visualized to help users understand the trend and potential future movements in the price of Ethereum.
 
 This project demonstrates how machine learning can be applied to cryptocurrency price forecasting, offering valuable insights for investors and enthusiasts looking to make data-driven decisions in the cryptocurrency market.
