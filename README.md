@@ -10,7 +10,7 @@ A machine learning project to predict Ethereum (ETH-USD) prices using Long Short
 - [Key features](#Key-features)
 - [Setup and Installation](#Setup-and-Installation)
 - [Project Structure](#project-structure)
-- [Contributing](#contributing)
+- [Code Explanation](#Code-Explanation)
 
 ## Project Overview
 In this project, we use yfinance to gather historical price data for Ethereum and preprocess it for training the LSTM model. The model is then trained on this data and used to predict the next 30 days of Ethereum prices. The predicted prices are visualized to help users understand the trend and potential future movements in the price of Ethereum.
@@ -38,6 +38,29 @@ pip install yfinance pandas numpy matplotlib scikit-learn tensorflow
 
 The project has the following structure:
 notebook for training and predictions │ ├── crypto_price_prediction.py # Python script to train and predict cryptocurrency prices ├── requirements.txt # Required libraries and dependencies └── README.md # This file
+
+## Code Explanation
+
+# Importing Libraries
+```bash
+import yfinance as yf
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.preprocessing import MinMaxScaler
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import LSTM, Dense
+from datetime import timedelta     # For date manipulation
+from sklearn.metrics import mean_squared_error  # For evaluating model performance
+```
+- yfinance: Used to fetch historical price data from Yahoo Finance.
+- pandas: For data manipulation and handling.
+- numpy: For numerical operations, especially on arrays.
+- matplotlib: For visualizing the results (plots).
+- MinMaxScaler: To scale the data between 0 and 1, which is required for neural network training.
+- tensorflow.keras: Used for building the LSTM (Long Short-Term Memory) model for time series prediction.
+- datetime.timedelta: Adds or subtracts a specific duration to/from a given date, essential for generating future dates in predictions.
+- sklearn.metrics.mean_squared_error: Evaluates model accuracy by calculating the Mean Squared Error between actual and predicted prices.
 
 
 
