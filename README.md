@@ -150,6 +150,9 @@ print("Model trained successfully!")
 ```
 provided plots the training and validation loss over epochs to visualize how the model's performance evolves during training. This is useful for understanding whether the model is overfitting or underfitting
 
+![Alt text](download-2.png)
+
+
 
 
 
