@@ -11,6 +11,7 @@ A machine learning project to predict Ethereum (ETH-USD) prices using Long Short
 - [Setup and Installation](#Setup-and-Installation)
 - [Project Structure](#project-structure)
 - [Code Explanation](#Code-Explanation)
+- [Predicted prices for the next 30 days](#Predicted-prices-for-the-next-30-days)
 
 ## Project Overview
 In this project, we use yfinance to gather historical price data for Ethereum and preprocess it for training the LSTM model. The model is then trained on this data and used to predict the next 30 days of Ethereum prices. The predicted prices are visualized to help users understand the trend and potential future movements in the price of Ethereum.
@@ -148,7 +149,7 @@ The model is trained on the preprocessed data:
 history = model.fit(X, y, batch_size=32, epochs=10, validation_split=0.1)
 print("Model trained successfully!")
 ```
-provided plots the training and validation loss over epochs to visualize how the model's performance evolves during training. This is useful for understanding whether the model is overfitting or underfitting
+Provided plots the training and validation loss over epochs to visualize how the model's performance evolves during training. This is useful for understanding whether the model is overfitting or underfitting
 ```
 plt.figure(figsize=(8, 6))
 plt.plot(history.history['loss'], label='Training Loss')
@@ -168,7 +169,7 @@ train_predictions = scaler.inverse_transform(train_predictions.reshape(-1, 1))
 y_actual = scaler.inverse_transform(y.reshape(-1, 1))
 recent_data = data[-window_size:].reshape(1, window_size, 1)
 ```
-# evaluate the performance of a regression model
+# Evaluate the performance of a regression model
 ```
 mse = mean_squared_error(y_actual, train_predictions)
 print(f"Mean Squared Error on Training Data: {mse}")
@@ -179,7 +180,7 @@ predicted_price = model.predict(recent_data)
 predicted_price = scaler.inverse_transform(predicted_price)
 print(f"Predicted Ethereum Price for the next day: {predicted_price[0][0]}")
 ```
-provided generates a plot that compares the actual prices and predicted prices for Ethereum on the training data. This is useful for visually assessing how well the model has learned and made predictions
+Provided generates a plot that compares the actual prices and predicted prices for Ethereum on the training data. This is useful for visually assessing how well the model has learned and made predictions
 ```
 plt.figure(figsize=(12, 6))
 plt.plot(y_actual, label='Actual Prices', color='blue')
@@ -194,7 +195,7 @@ plt.show()
 
 ![Alt text](download-1.png)
 
-# predicted prices for the next 30 days
+# Predicted prices for the next 30 days
 
 
 ```
