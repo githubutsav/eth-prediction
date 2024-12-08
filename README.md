@@ -62,6 +62,22 @@ from sklearn.metrics import mean_squared_error  # For evaluating model performan
 - datetime.timedelta: Adds or subtracts a specific duration to/from a given date, essential for generating future dates in predictions.
 - sklearn.metrics.mean_squared_error: Evaluates model accuracy by calculating the Mean Squared Error between actual and predicted prices.
 
+# Fetching Historical Ethereum Data
+The data for Ethereum (ETH) is fetched using yfinance. You can specify the ticker symbol ('ETH-USD') and the time period you are interested in:
+```bash
+eth_data = yf.download('ETH-USD', start='2023-01-01', end='2024-12-01')
+```
+- The start and end parameters define the time range for the data. In this case, it pulls data for Ethereum between January 1, 2023, and January 1, 2024.
+- The data DataFrame will contain the historical price data, including columns like Open, High, Low, Close, and Volume.
+
+
+To print the first few rows of a dataset called eth_data in Python using pandas, the head() function is used
+```
+print(eth_data.head())
+```
+ 
+
+
 
 
 
