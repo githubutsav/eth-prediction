@@ -1,6 +1,7 @@
 # Ethereum Price Prediction
 
 Author: Utsav Singh
+
 Description:
 A machine learning project to predict Ethereum (ETH-USD) prices using Long Short-Term Memory (LSTM) neural networks. This project fetches historical Ethereum price data using `yfinance`, processes it for training, and predicts future prices while visualizing the results.
 
